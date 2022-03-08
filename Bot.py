@@ -30,11 +30,11 @@ async def newUser(message: types.Message):
     if welcome == 5:
         await message.answer("Приветики\nя Коля\nмне 10 лет\nнадеюсь в этом хавусе вам будет комфортно:)❤️❤️")
 
-@dp.message_handler(commands=['/tiktok'])
+@dp.message_handler(commands=['tiktok'])
 async def tiktok(message: types.Message):
+    
+    tikaccount = InlineKeyboardButton('Тик ток админа:',url='youtube.com')
     tikinline = InlineKeyboardMarkup().add(tikaccount)
-    tikaccount = InlineKeyboardButton('Тик ток админа:',url='')
-
     await message.answer("тик ток внизу:",reply_markup=tikinline)
 
 if __name__ == "__main__":
