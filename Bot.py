@@ -1,4 +1,4 @@
-import logging ,random,time
+import random,time
 from aiogram import *
 from aiogram.types import ReplyKeyboardMarkup,KeyboardButton
 
@@ -6,7 +6,7 @@ from aiogram.types import ReplyKeyboardMarkup,KeyboardButton
 bot = Bot(token="5114052117:AAH2ZINSWNf-9YSP8p3Bzh-Mk3gKEMppbq4")
 dp = Dispatcher(bot)
 
-@dp.message_handler(text=['0','a'])
+@dp.message_handler(text=['.','.'])
 async def messages(message: types.Message):
     await message.delete()
 
@@ -42,7 +42,7 @@ abobtmi = KeyboardButton("в AdoptMe")
 mm2 = KeyboardButton('Murder mustory2')
 ikea = KeyboardButton('В икею')
 
-exitpl = ReplyKeyboardMarkup(resize_keyboard=True,row_width=1).add(KeyboardButton('0'))
+exitpl = ReplyKeyboardMarkup(resize_keyboard=True,row_width=1).add(KeyboardButton('.'))
 
 playmark.add(abobtmi,mm2,ikea)
 
@@ -53,6 +53,7 @@ async def play(message: types.Message):
     
 @dp.message_handler(text=['В икею','Murder mustory2','в AdoptMe'])
 async def exit(message: types.Message):
+    await message.answer(".",reply_markup=exitpl)
     time.sleep(0.01)
     await message.delete()
 
