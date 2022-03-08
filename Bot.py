@@ -49,12 +49,10 @@ playmark.add(abobtmi,mm2,ikea)
 @dp.message_handler(commands=['play','играть','play@MikolaCatBot'])
 async def play(message: types.Message):
     await message.answer('во что поиграть',reply_markup=playmark)
-    time.sleep(0.01)
     
 @dp.message_handler(text=['В икею','Murder mustory2','в AdoptMe'])
 async def exit(message: types.Message):
     await message.answer(".",reply_markup=exitpl)
-    time.sleep(0.01)
     await message.delete()
 
 if __name__ == "__main__":
