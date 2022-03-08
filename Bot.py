@@ -1,6 +1,6 @@
 import random,time
 from aiogram import *
-from aiogram.types import ReplyKeyboardMarkup,KeyboardButton
+from aiogram.types import *
 
 bot = Bot(token="5114052117:AAH2ZINSWNf-9YSP8p3Bzh-Mk3gKEMppbq4")
 dp = Dispatcher(bot)
@@ -29,6 +29,13 @@ async def newUser(message: types.Message):
         
     if welcome == 5:
         await message.answer("Приветики\nя Коля\nмне 10 лет\nнадеюсь в этом хавусе вам будет комфортно:)❤️❤️")
+
+@dp.message_handler(commands=['/tiktok'])
+async def tiktok(message: types.Message):
+    tikinline = InlineKeyboardMarkup().add(tikaccount)
+    tikaccount = InlineKeyboardButton('Тик ток админа:',url='')
+
+    await message.answer("тик ток внизу:",reply_markup=tikinline)
 
 if __name__ == "__main__":
     executor.start_polling(dp,skip_updates=True)
