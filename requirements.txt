@@ -1,3 +1,1 @@
-aiogram
-random
-time
+aiogram==2.19
