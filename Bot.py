@@ -37,5 +37,9 @@ async def tiktok(message: types.Message):
     tikinline = InlineKeyboardMarkup().add(tikaccount)
     await message.answer("тик ток внизу:",reply_markup=tikinline)
 
+@dp.message_handler(content_types=["started_a_new_video_chat"])
+async def video_chat(message: types.Message):
+    await message.answer("sdfdssdgfgdfg")
+
 if __name__ == "__main__":
     executor.start_polling(dp,skip_updates=True)
